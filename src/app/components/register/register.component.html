@@ -1,0 +1,107 @@
+<div class="row" [hidden]="nextStep">
+  <div class="col-12 text-center">
+    <h1 class="title-welcome fw-bold">Paso 1 de 2</h1><br>
+    <p>Registrate con nosotros para que puedas<br>
+      <b>ver</b> el estado de tu equipo en cualquier momento del día.
+    </p>
+    <div class="row pt-4">
+      <div class="col-lg-3 col-sm-1 col-1"></div>
+      <div class="col-lg-6 col-sm-10 col-10">
+        <form class="form-create-user" (ngSubmit)="pasoUno()" [formGroup]="pasoUnoForm">
+          <div class="form-group required">
+            <input type="email" formControlName="email" class="form-control input-user email-user" id="email-user"
+              aria-describedby="email-user" placeholder="info@reparatuapple.com*">
+            <p *ngIf="emailError" style="color: red">Email incorrecto</p>
+          </div><br>
+          <div class="form-group">
+            <input type="password" formControlName="password" class="form-control input-user password-user"
+              id="password-user" placeholder="Contraseña*">
+            <p *ngIf="passwordError" style="color: red">El password debe contener mínimo 3 carácteres</p>
+          </div><br><br>
+          <div class="form-group">
+            <button type="submit" class="btn btn-principal">
+              <h2 class="text-revert m-0">Continuar</h2>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-3 col-sm-1 col-1"></div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div class="row" *ngIf="nextStep">
+  <div class="col-12 text-center">
+    <h1 class="title-welcome fw-bold">Paso 2 de 2</h1><br>
+    <p>Ingresa tus datos de contacto<br>
+      <b>Recuerda</b> que si tienes tu celular arreglando,<br> regalanos el numero principal
+      y uno alterno
+    </p>
+    <div class="row pt-4">
+      <div class="col-lg-3 col-sm-1 col-1"></div>
+      <div class="col-lg-6 col-sm-10 col-10">
+        <form (ngSubmit)="pasoDos()" [formGroup]="pasoDosForm">
+          <div class="form-group">
+            <input type="text" class="form-control input-user email-user" formControlName="nombre" id="name-user"
+              aria-describedby="name-user" placeholder="Nombre y apellido*">
+            <p *ngIf="nameError" style="color: red">Debe escribir un nombre valido</p>
+          </div><br>
+          <div class="form-group">
+            <input type="number" class="form-control input-user email-user" formControlName="numDoc" id="name-user"
+              aria-describedby="name-user" placeholder="Numero Documento*">
+            <p *ngIf="numDocError" style="color: red">Debe escribir un número valido</p>
+          </div><br>
+          <div class="form-group">
+            <div class="form-group">
+              <select class="form-select input-user" formControlName="typeDoc"
+                aria-label="Selelccione un tipo de documento">
+                <option disabled selected>Tipo de documento</option>
+                <option value="administrador">Cedula</option>
+                <option value="asesor">Tarjeta</option>
+                <option value="domiciliario">NIT</option>
+              </select>
+            </div>
+            <p *ngIf="tipoDocError" style="color: red">Debe seleccionar un documento valido</p>
+          </div><br>
+          <div class="form-group">
+            <input type="number" class="form-control input-user number-user" formControlName="telefono" id="number-user"
+              aria-describedby="number-user" placeholder="Número de celular*">
+            <p *ngIf="telError" style="color: red">Debe escribir un número valido</p>
+          </div><br>
+          <div class="form-group">
+            <input type="number" class="form-control input-user number-user" formControlName="telefonoDos"
+              id="number-two-user" aria-describedby="number-two-user" placeholder="Número de celular Alterno o fijo">
+              <p *ngIf="tel2Error" style="color: red">Debe escribir un número valido</p>
+          </div><br>
+          <div class="form-group">
+            <input type="date" class="form-control input-user" formControlName="fechaNaci" id="date-of-birth-user"
+              aria-describedby="date-of-birth-user" placeholder="Fecha de nacimiento">
+              <p *ngIf="fechaError" style="color: red">Debe seleccionar una fecha valida</p>
+          </div><br>
+          <div class="row">
+            <div class="form-group text-left">
+              <input class="form-check-input" formControlName="terminos" type="checkbox">
+              <label class="form-check-label">
+                &nbsp;&nbsp;Acepto terminos y condiciones *
+              </label>
+              <p *ngIf="terminosError" style="color: red">Debe aceptar terminos y condiciones</p>
+            </div><br><br>
+            <div class="form-group text-left">
+              <input class="form-check-input" formControlName="aceptoRegistro" type="checkbox">
+              <label class="form-check-label">
+                &nbsp;&nbsp;Acepto registro *
+              </label>
+              <p *ngIf="registroError" style="color: red">Debe aceptar el registro</p>
+            </div><br><br>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-principal">
+              <h2 class="text-revert m-0">Continuar</h2>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-3 col-sm-1 col-1"></div>
+    </div>
+  </div>
+</div>

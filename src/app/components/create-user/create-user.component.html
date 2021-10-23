@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-12">
+        <h1 class="title-welcome fw-bold">Crear Usuario</h1><br>
+        <form class="form-create-user" (ngSubmit)="createUsers()" [formGroup]="createUserForm">
+            <div class="row pt-4">
+                <div class="col-6 col-lg-4 col-md-4">
+                    <div class="form-group">
+                        <select class="form-select input-user" formControlName="rol" aria-label="Selelccione un rol">
+                            <option disabled selected>Seleccione un Rol</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Comercial</option>
+                            <option value="3">Domiciliario</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-1 d-lg-block d-md-block d-none d-md-none"></div>
+                <div class="col-6 col-lg-4 col-md-4">
+                    <div class="form-group">
+                        <input type="string" formControlName="cedula" class="form-control input-user number-user" id="identification-user" aria-describedby="identification-user" placeholder="Cedula *">
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-6 col-lg-4 col-md-4">
+                    <div class="form-group">
+                        <input type="string" formControlName="nombres" class="form-control input-user number-user" id="name-user" aria-describedby="name-user" placeholder="Nombres *">
+                    </div>
+                </div>
+                <div class="col-1 d-lg-block d-md-block d-none d-md-none"></div>
+                <div class="col-6 col-lg-4 col-md-4">
+                    <div class="form-group">
+                        <input type="string" formControlName="apellidos" class="form-control input-user number-user" id="last-name-user" aria-describedby="last-name-user" placeholder="Apellidos *">
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-6 col-lg-4 col-md-4">
+                    <div class="form-group">
+                        <input type="email" formControlName="email" class="form-control input-user number-user" id="email-user" aria-describedby="email-user" placeholder="Email *">
+                    </div>
+                </div>
+                <div class="col-1 d-lg-block d-md-block d-none d-md-none"></div>
+                <div class="col-6 col-lg-4 col-md-4">
+                    <div class="form-group">
+                        <input type="string" formControlName="telefono" class="form-control input-user number-user" id="last-name-user" aria-describedby="last-name-user" placeholder="telefono *">
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-6 col-lg-4 col-md-4">
+                    <div class="form-group">
+                        <input type="email" formControlName="clave" class="form-control input-user number-user" id="email-user" aria-describedby="email-user" placeholder="clave *">
+                    </div>
+                </div>
+                <div class="col-1 d-lg-block d-md-block d-none d-md-none"></div>
+                <div class="col-6 col-lg-4 col-md-4">
+                    <div class="form-group">
+                        <input type="string" formControlName="codigo" class="form-control input-user number-user" id="code-user" aria-describedby="code-user" placeholder="Código *">
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-6 col-lg-4 col-md-4">
+                    <div class="form-group">
+                        <input type="date" formControlName="fechaNacimiento" class="form-control input-user number-user" id="number-user" aria-describedby="date-of-birth-user" placeholder="Fecha de Nacimiento *">
+                    </div>
+                </div>
+                <div class="col-1 d-lg-block d-md-block d-none d-md-none"></div>
+                <div class="col-6 col-lg-4 col-md-4">
+                    <div class="form-group">
+                        <select class="form-select input-user" formControlName="tipoContrato" aria-label="Selelccione un tipo de contrato">
+                            <option disabled selected>Tipo de contrato</option>
+                            <option value="administrador">Definido</option>
+                            <option value="asesor">Indefinido</option>
+                            <option value="domiciliario">Prestación de servicios</option>
+                            <option value="cliente">Temporal</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-right pt-5">
+                <div class="col-1"></div>
+                <div class="col-3">
+                    <button type="button" class="btn btn-principal"><h2 class="text-revert m-0">Volver al inicio</h2></button>
+                </div>
+                <div class="col-3">
+                    <button type="submit" class="btn btn-principal" class="btn btn-principal"><h2 class="text-revert m-0">Crear usuario</h2></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

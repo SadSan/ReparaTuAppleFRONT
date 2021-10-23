@@ -1,0 +1,27 @@
+<router-outlet></router-outlet>
+
+
+<div class="row">
+    <div class="col-12 text-center">
+        <h1 class="title-welcome fw-bold">¡Bienvenido!</h1><br>
+        <p>Ya eres uno con la familia Repara Tu Apple. <br> Por favor ingresa tu email y contraseña para que puedas ver tus productos.
+        </p>
+        <div class="row pt-4">
+            <div class="col-lg-3 col-sm-1 col-1"></div>
+            <div class="col-lg-6 col-sm-10 col-10">
+                <form [formGroup]="loginForm">
+                    <div class="form-group">
+                        <input type="email" class="form-control input-user" id="email-user" aria-describedby="email-user" placeholder="info@reparatuapple.com" formControlName="correo">
+                    </div><br>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-user" id="password-user" placeholder="Contraseña" formControlName="clave">
+                    </div><br><br>
+                    <div class="form-group">
+                        <button type="button" (click)="onLoginAux()" [disabled]="loginForm.invalid" class="btn btn-principal"><h2 class="text-revert m-0">Iniciar Sesion</h2></button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 col-sm-1 col-1"></div>
+        </div>
+    </div>
+</div>

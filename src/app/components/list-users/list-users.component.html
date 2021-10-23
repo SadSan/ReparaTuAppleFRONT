@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-12">
+        <h1 class="title-welcome fw-bold">Lista de usuarios</h1><br>
+
+        <div class="card list-users-card">
+            <div class="card-body">
+                <div class="row line-list-users">
+                    <div class="col-1"></div>
+                    <div class="col-3">Nombre Completo</div>
+                    <div class="col-3">Rol</div>
+                    <div class="col-2">Estado</div>
+                    <div class="col-3">Correo</div>
+                </div>
+                <br>
+                <div *ngFor="let user of userData" class="row line-list-users">
+                    <div class="col-1">
+                        <div class="secondary-sections">
+                            <span class="material-icons">face</span>
+                        </div>
+                    </div>
+                    <div class="col-3">{{user.nombre}}</div>
+                    <div class="col-3">{{user.id_rol}}</div>
+                    <div class="col-2 actived-user">{{user.id_estado}}</div>
+                    <div class="col-3">{{user.correo}}</div>
+                </div>
+                <div class="pt-5 text-center">
+                    <button type="button" class="btn btn-principal"><h2 class="text-revert m-0">Volver al inicio</h2></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

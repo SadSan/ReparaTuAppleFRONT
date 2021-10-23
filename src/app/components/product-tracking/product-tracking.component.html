@@ -1,0 +1,225 @@
+<div class="row">
+    <div class="col-12">
+        <h1 class="title-welcome fw-bold text-center">¡Tu Producto!</h1><br>
+        <div class="d-lg-block d-md-block d-sm-none d-none">
+            <div class="row pt-3">
+                <div class="col-1"></div>
+                <div class="col-4 col-md-6 col-lg-4">
+                    <div class="card first-card">
+                        <div class="card-body">
+                            <ul class="timeline">
+                                <li class="event">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h3 class="principal-timeline"
+                                                [ngClass]="{'second-timeline': estado=='RECOGIDA'}">RECOGIDA</h3>
+                                        </div>
+                                        <div class="col-3 text-center">
+                                            <div *ngIf="estado === 'RECOGIDA'" class="secondary-sections">
+                                                <span class="material-icons position-arrow">arrow_forward</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h3 class="principal-timeline"
+                                                [ngClass]="{'second-timeline': estado=='LABORATORIO'}">LABORATORIO</h3>
+                                        </div>
+                                        <div class="col-3 text-center">
+                                            <div *ngIf="estado === 'LABORATORIO'" class="secondary-sections">
+                                                <span class="material-icons position-arrow">arrow_forward</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h3 class="principal-timeline"
+                                                [ngClass]="{'second-timeline': estado=='DIAGNOSTICO'}">DIAGNÓSTICO</h3>
+                                        </div>
+                                        <div class="col-3 text-center">
+                                            <div *ngIf="estado === 'DIAGNOSTICO'" class="secondary-sections">
+                                                <span class="material-icons position-arrow">arrow_forward</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <h3 class="principal-timeline"
+                                                [ngClass]="{'second-timeline': estado=='ACEPTACION'}">ACEPTACIÓN ARREGLO
+                                            </h3>
+                                        </div>
+                                        <div class="col-3 text-center">
+                                            <div *ngIf="estado === 'ACEPTACION'" class="secondary-sections">
+                                                <span class="material-icons position-arrow">arrow_forward</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h3 class="principal-timeline"
+                                                [ngClass]="{'second-timeline': estado=='REPARANDO'}">REPARANDO</h3>
+                                        </div>
+                                        <div class="col-3 text-center">
+                                            <div *ngIf="estado === 'REPARANDO'" class="secondary-sections">
+                                                <span class="material-icons position-arrow">arrow_forward</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h3 class="principal-timeline"
+                                                [ngClass]="{'second-timeline': estado=='ENVIO'}">ENVIO</h3>
+                                        </div>
+                                        <div class="col-3 text-center">
+                                            <div *ngIf="estado === 'ENVIO'" class="secondary-sections">
+                                                <span class="material-icons position-arrow">arrow_forward</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-5">
+                    <div class="card second-card">
+                        <div *ngIf="estado === 'RECOGIDA'" class="card-body card-product-tracking">
+                            <b>{{seguimientoInfo.nombre_cliente}}</b> <br><br>
+                            Es la persona asignada para recoger tu equipo, <br>
+                            estara en tu hogar el di de hoy. de 9 am a 2pm es la recogida
+                            Recuerde: El servicio a domicilio puede sufrir retrasos por
+                            cuestiones de clima.<br><br>
+                            Gracias.
+                        </div>
+                        <div *ngIf="estado === 'LABORATORIO'" class="card-body card-product-tracking">
+                            <b>{{seguimientoInfo.nombre_cliente}}</b> <br><br>
+                            Tu equipo se encuentra en el laboratorio para su respectivo
+                            diagnostico por favor estar atento para realizar la aprobación
+                            o rechazo de su respectivo diagnóstico.<br><br>
+                            Gracias.
+                        </div>
+                        <div *ngIf="estado === 'DIAGNOSTICO'" class="card-body card-product-tracking">
+                            <b>{{seguimientoInfo.nombre_cliente}}</b> <br><br>
+                            <b>Nuestro especialista en apple Felipe Bernal,</b><br>
+                            realizó el diagnóstico de su equipo y se detecto
+                            lo siguiente: <br><br>
+                            {{seguimientoInfo.referencia_equipo}} <br>
+                            Memoria: {{seguimientoInfo.disco}} <br>
+                            Falla: {{seguimientoInfo.reporte_falla}} <br>
+                            Foto: (Foto Adjuntada) <br>
+                            Valor: {{seguimientoInfo.valor_negociado}} <br>
+                            Observaciones: {{seguimientoInfo.ob_cliente}} <br><br>
+                            <b>NOTA: Favor desplegar el siguiente paso para la aceptacion
+                                de las condiciones y empezar el arreglo si requieres saber mas
+                                sobre el diagnostico te puedes comunciar ala asesora asignado</b><br><br>
+
+                            Gracias.
+                        </div>
+                        <div *ngIf="estado === 'ACEPTACION'" class="card-body card-product-tracking">
+                            <b>{{seguimientoInfo.nombre_cliente}}</b> <br><br>
+                            Al dar click en el boton <b>“aceptar”</b> esta de acuerdo con las
+                            condiciones comerciales sobre el arreglo
+                            de su equipo con referencia IPHONE 7 PLUS por un valor de
+                            1.900.000 mil pesos, <br>
+                            Según lo estipulado en nuestro servicio de calidad y facturacion <br>
+                            Al dar clic en el boton <b>“Rechazar”</b> se le hara la devolucion del equipo
+                            en mension y tendra un cobro de 20.000 pesos por diagnostico de
+                            equipo.<br><br>
+                            Gracias.
+                            <br>
+                        </div>
+                        <div *ngIf="estado === 'REPARANDO'" class="card-body card-product-tracking">
+                            <b>{{seguimientoInfo.nombre_cliente}}</b> <br><br>
+                            Tu equipo lo tiene asignado nuestro especializando <b>FELIPE BERNAL</b>
+                            en estos momentos se encuentra reparando tu equipo, si nuestro
+                            especialista te necesita te llamara a tu linea alterna o se estara
+                            comunicando uno de nuestros asesores<br><br>
+                            <b>Gracias, por confiar en nosotros</b>
+                        </div>
+                        <div *ngIf="estado === 'ENVIO'" class="card-body card-product-tracking">
+                            <b>{{seguimientoInfo.nombre_cliente}}</b> <br><br>
+                            <div>
+                                Nos entristece no haber llegado a un acuerdo para la reaparacion
+                                de su equipo, de igual manera siempre estaremos a qui para prestarte
+                                el mejor servicio.<br><br>
+                            </div>
+                            Tu equipo se asigno a <b>DIEGO RAMIREZ</b> para el envio del equipo <br>
+                            Entrega transcurso del dia de 9AM a 6PM. <br>
+                        </div>
+                        <div *ngIf="estado === 'ACEPTACION'" class="row card-product-tracking pt-0">
+                            <div class="col-6 text-right">
+                                <button type="button" class="btn btn-principal color-grey">
+                                    <h2 class="text-revert m-0">Aceptar</h2>
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-principal color-grey">
+                                    <h2 class="text-revert m-0">Rechazar</h2>
+                                </button>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-lg-none d-md-none d-sm-block d-block">
+            <div class="row pt-3">
+                <div class="col-12">
+                    <div class="card first-card">
+                        <div class="card-body">
+                            <ul class="timeline">
+                                <li class="event">
+                                    <h3 class="principal-timeline second-timeline">RECOGIDA</h3>
+                                </li>
+
+                                <div class="card second-card">
+                                    <div class="card-body card-product-tracking">
+                                        <b>Diego Ramirez</b> <br><br>
+
+                                        Es la persona asignada para recoger tu equipo, <br>
+
+                                        estara en tu hogar el di de hoy. de 9 am a 2pm es la recogida
+                                        Recuerde: El servicio a domicilio puede sufrir retrasos por
+                                        cuestiones de clima.<br><br>
+
+                                        Gracias.
+                                    </div>
+                                </div> <br>
+
+                                <li class="event">
+                                    <h3 class="principal-timeline">LABORATORIO</h3>
+                                </li>
+                                <li class="event">
+                                    <h3 class="principal-timeline">DIAGNÓSTICO</h3>
+                                </li>
+                                <li class="event">
+                                    <h3 class="principal-timeline">ACEPTACIÓN ARREGLO</h3>
+                                </li>
+                                <li class="event">
+                                    <h3 class="principal-timeline">REPARANDO</h3>
+                                </li>
+                                <li class="event">
+                                    <h3 class="principal-timeline">ENVIO</h3>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>

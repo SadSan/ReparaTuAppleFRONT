@@ -1,0 +1,37 @@
+<router-outlet></router-outlet>
+<div class="row">
+    <div class="col-12 text-center">
+        <h1 class="title-welcome fw-bold">¡Bienvenido!</h1><br>
+        <p>Ya eres uno más de la familia<br>
+            <b>REPARA TU APPLE</b>
+        </p>
+        <p>¡Ey! que genial volverte atender, <br><br>
+            <b>¡Gracias por seguir confiando en nosotros!</b>
+        </p>
+        <div class="row pt-4">
+            <p>Porfavor ingresa el código de seguimiento <br> que nuestra asesora comercial te brindó</p>
+            <div class="col-lg-3 col-sm-1 col-1"></div>
+            <div class="col-lg-8 col-sm-10 col-10">
+                <form (ngSubmit)="getClientByCode()" [formGroup]="consultaForm" class="pt-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="form-group">
+                                <input type="string" pattern="^[0-9]+" formControlName="code"
+                                    class="form-control input-user" id="tracking-code" aria-describedby="tracking-code"
+                                    placeholder="12345678">
+                            </div>
+                        </div>
+                        <div class="col-4 text-left">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-principal">
+                                    <h3 class="text-revert m-0">Continuar</h3>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-1 col-sm-1 col-1"></div>
+        </div>
+    </div>
+</div>
