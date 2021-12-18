@@ -145,7 +145,7 @@ export class RegisterComponent implements OnInit {
       }
       this.clienteService.createClient(cliente).subscribe(() => {
         Swal.fire({
-          position: 'top-end',
+          position: 'top',
           icon: 'success',
           title: 'Usuario Creado',
           showConfirmButton: false,

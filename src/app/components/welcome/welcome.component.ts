@@ -11,10 +11,10 @@ export class WelcomeComponent implements OnInit {
   constructor( private usuarios: UsuariosService ) { }
 
   ngOnInit(): void {
-    this.usuarios.getUsers()
-    .subscribe( usuarios => {
-      //console.log(usuarios);
-    })
+    //this.usuarios.getUsers()
+    //.subscribe( usuarios => {
+    //  //console.log(usuarios);
+    //})
   }
 
 }

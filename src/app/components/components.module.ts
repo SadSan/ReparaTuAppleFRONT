@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -24,9 +25,12 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { ButtonModule } from 'primeng/button';
+
 
 const routes: Routes = [
-  { path: '', component: WelcomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegisterComponent },
   { path: 'cliente', component: ClientComponent },
@@ -74,7 +78,12 @@ const routes: Routes = [
   ],
   imports: [CommonModule, RouterModule.forRoot(routes),
     FormsModule,
-    ReactiveFormsModule],
+    ReactiveFormsModule,
+    NgbModule,
+    MatButtonModule,
+    MatIconModule,
+    ButtonModule
+  ],
   exports: [
     NavbarComponent,
     FooterComponent,
@@ -89,4 +98,4 @@ const routes: Routes = [
     RegisterComponent,
   ],
 })
-export class ComponentsModule {}
+export class ComponentsModule { }

@@ -1,154 +1,175 @@
 <router-outlet></router-outlet>
 
 <ng-template #contenido let-modal>
-    <div class="modal-header">
-        <h4 class="modal-title">SEGUIMIENTO</h4>
-        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="title-welcome fw-bold">Editar Código de seguimiento</h1><br>
-                <p>Ingresar la información que se solicita en las siguientes lineas, Es necesario que llene
-                    en su totalidad el formulario.</p><br>
-                <form class="form-create-code" (ngSubmit)="editCode()" [formGroup]="seguimientoModal">
-                    <div class="row">
-                        <div class="col-12 col-lg-4 col-md-4">
-                            <span>Consecutivo</span>
-                            <div class="form-group pt-1 pb-2">
-                                <input [readonly]="true" type="number" formControlName="cod_seguimiento"
-                                    class="form-control input-user" id="code-created" aria-describedby="code-created"
-                                    placeholder="1234567">
-                            </div>
-                            <span>Nombre Completo</span>
-                            <div class="form-group pt-1 pb-2">
-                                <input type="text" formControlName="nombre_cliente" class="form-control input-user"
-                                    id="name-user" aria-describedby="name-user" placeholder="Pepita perez *">
-                            </div>
-                            <span>Número de celular</span>
-                            <div class="form-group pt-1 pb-2">
-                                <input type="number" formControlName="celular_cliente" class="form-control input-user"
-                                    id="number-user" aria-describedby="number-user" placeholder="312 589 0000 *">
-                            </div>
-                            <span>Dirección</span>
-                            <div class="form-group pt-1 pb-2">
-                                <input type="address" formControlName="direccion_cliente"
-                                    class="form-control input-user" id="address-user" aria-describedby="address-user"
-                                    placeholder="Calle 18 # 50 *">
-                            </div>
-                            <span>Estado</span>
-                            <div class="form-group pt-1 pb-2">
-                                <input type="number" formControlName="nombre_seguimiento"
-                                    class="form-control input-user" id="code-created" aria-describedby="code-created"
-                                    placeholder="1234567">
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4 col-md-4">
-                            <span>Correo</span>
-                            <div class="form-group pt-1 pb-2">
-                                <input type="text" formControlName="nombre_cliente" class="form-control input-user"
-                                    id="name-user" aria-describedby="name-user" placeholder="Pepita perez *">
-                            </div>
-                            <span>Referencia de equipo</span>
-                            <div class="form-group pt-1 pb-2">
-                                <input type="text" formControlName="referencia_equipo" class="form-control input-user"
-                                    id="product-reference" aria-describedby="equipment-reference"
-                                    placeholder="Plus 7 *">
-                            </div>
-                            <span>Modelo</span>
-                            <div class="form-group pt-1 pb-2">
-                                <input type="text" formControlName="modelo" class="form-control input-user"
-                                    id="product-model" aria-describedby="product-model" placeholder="ABC123456 *">
-                            </div>
-                            <span>Disco</span>
-                            <div class="form-group pt-1 pb-2">
-                                <input type="text" formControlName="disco" class="form-control input-user"
-                                    id="product-disk" aria-describedby="product-disk" placeholder="Cj12p3456 *">
-                            </div>
-                            <span>Valor negociado</span>
-                            <div class="form-group pt-1 pb-2">
-                                <input type="number" formControlName="valor_negociado" class="form-control input-user"
-                                    id="product-fix-price" aria-describedby="product-fix-price" placeholder="$ 100.000">
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4 col-md-4">
-                            <span>Fotografias</span>
-                            <img src="./images/imagen.jpg">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-lg-4 col-md-4">
-                            <span>Observaciones Cliente</span><br>
-                            <div class="form-group pt-2">
-                                <textarea formControlName="ob_cliente" type="textarea" class="form-control input-user"
-                                    id="comment-user" aria-describedby="comment-user" rows="8" cols="20"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4 col-md-4">
-                            <span>Descripción</span><br>
-                            <div class="form-group pt-2">
-                                <textarea formControlName="descripcion" type="textarea" class="form-control input-user"
-                                    id="comment-user" aria-describedby="comment-user" rows="8" cols="20"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-lg-8 col-md-8 pt-2">
-                            <span>Reporte de falla</span><br>
-                            <div class="form-group pt-2">
-                                <textarea type="textarea" formControlName="reporte_falla"
-                                    class="form-control report-comment input-user" id="
-                                product-failure-report" aria-describedby="product-failure-report" rows="2"
-                                    cols="10"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4 col-md-4 content-center pt-4">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-principal" class="btn btn-principal">
-                                    <h2 class="text-revert m-0">continuar</h2>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+  <div class="modal-header">
+    <h2 class="title-welcome fw-bold">Seguimiento</h2>
+    <a class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+      <i class="pi pi-times"></i>
+    </a>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-12">
+        <h2 class=" fw-bold">Editar Código de seguimiento</h2>
+        <br />
+        <p>
+          Ingresar la información que se solicita en las siguientes lineas, Es
+          necesario que llene el formulario en su totalidad.
+        </p>
+        <br />
+        <form class="form-create-code" (ngSubmit)="editCode()" [formGroup]="seguimientoModal">
+          <div class="row">
+            <div class="col-12 col-lg-4 col-md-4">
+              <span>Consecutivo</span>
+              <div class="form-group pt-1 pb-2">
+                <input [readonly]="true" type="number" formControlName="cod_seguimiento" class="form-control input-user"
+                  id="code-created" aria-describedby="code-created" placeholder="1234567" />
+              </div>
+              <span>Nombre Completo</span>
+              <div class="form-group pt-1 pb-2">
+                <input [readonly]="userRolLS == 4" type="text" formControlName="nombre_cliente"
+                  class="form-control input-user" id="name-user" aria-describedby="name-user"
+                  placeholder="Pepita perez *" />
+              </div>
+              <span>Número de celular</span>
+              <div class="form-group pt-1 pb-2">
+                <input [readonly]="userRolLS == 4" type="number" formControlName="celular_cliente"
+                  class="form-control input-user" id="number-user" aria-describedby="number-user"
+                  placeholder="312 589 0000 *" />
+              </div>
+              <span>Dirección</span>
+              <div class="form-group pt-1 pb-2">
+                <input [readonly]="userRolLS == 4" type="address" formControlName="direccion_cliente"
+                  class="form-control input-user" id="address-user" aria-describedby="address-user"
+                  placeholder="Calle 18 # 50 *" />
+              </div>
+              <span>Estado</span>
+              <div class="form-group pt-1 pb-2">
+                <input readonly="true" *ngIf="userRolLS == 4" type="text" formControlName="nombre_seguimiento" id="status"
+                  aria-describedby="status" class="form-control input-user" placeholder="RECOGIDA *">
+                <select *ngIf="userRolLS != 4" class="form-select input-user" [(ngModel)]="stateSelected" formControlName="nombre_seguimiento"
+                  aria-label="Selelccione un estado">
+                  <option *ngFor="let state of states">{{state.name}}</option>
+                </select>
+              </div>
             </div>
-        </div>
+            <div class="col-12 col-lg-4 col-md-4">
+              <span>Correo</span>
+              <div class="form-group pt-1 pb-2">
+                <input [readonly]="userRolLS == 4" type="email" formControlName="correo_cliente"
+                  class="form-control input-user" id="name-user" aria-describedby="name-user"
+                  placeholder="Pepita@email.com *" />
+              </div>
+              <span>Referencia de equipo</span>
+              <div class="form-group pt-1 pb-2">
+                <input type="text" formControlName="referencia_equipo" class="form-control input-user"
+                  id="product-reference" aria-describedby="equipment-reference" placeholder="iphone 7 *" />
+              </div>
+              <span>Modelo</span>
+              <div class="form-group pt-1 pb-2">
+                <input type="text" formControlName="modelo" class="form-control input-user" id="product-model"
+                  aria-describedby="product-model" placeholder="2018 *" />
+              </div>
+              <span>Disco</span>
+              <div class="form-group pt-1 pb-2">
+                <input type="text" formControlName="disco" class="form-control input-user" id="product-disk"
+                  aria-describedby="product-disk" placeholder="256GB *" />
+              </div>
+              <span>Valor negociado</span>
+              <div class="form-group pt-1 pb-2">
+                <input type="number" formControlName="valor_negociado" class="form-control input-user"
+                  id="product-fix-price" aria-describedby="product-fix-price" placeholder="$ 100.000" />
+              </div>
+            </div>
+            <div class="col-12 col-lg-4 col-md-4">
+              <span>Observaciones Cliente</span>
+              <div class="form-group pt-1 pt-2">
+                <textarea formControlName="ob_cliente" type="textarea" class="form-control input-user" id="comment-user"
+                  aria-describedby="comment-user" rows="5"></textarea>
+              </div>
+              <span>Descripción</span>
+              <div class="form-group pt-1 pt-2">
+                <textarea formControlName="descripcion" type="textarea" class="form-control input-user"
+                  id="comment-user" aria-describedby="comment-user" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-lg-8 col-md-8 pt-2">
+              <span>Reporte de falla</span><br />
+              <div class="form-group pt-2">
+                <textarea type="textarea" formControlName="reporte_falla" class="form-control report-comment input-user"
+                  id="product-failure-report" aria-describedby="product-failure-report" rows="2" cols="10"></textarea>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4 col-md-4 content-center pt-4">
+              <div class="form-group">
+                <button type="submit" [disabled]="submitted" class="btn btn-principal" class="btn btn-principal">
+                  <h2 class="text-revert m-0">continuar</h2>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </ng-template>
 
 <div class="row">
-    <div class="col-12">
-        <h1 class="title-welcome fw-bold">Seguimiento</h1><br>
-        <p class="pt-4 pb-4">Seguimiento de los pedidos por fecha de ingreso y producto.</p>
-            <div class="card list-users-card d-none d-lg-block d-md-block">
-                <div class="card-body">
-                    <div class="row line-list-users">
-                        <div class="col-2">Cliente</div>
-                        <div class="col-2">Correo</div>
-                        <div class="col-2">Asignado a</div>
-                        <div class="col-2">Estado</div>
-                        <div class="col-2">Equipo</div>
-                        <div class="col-2">Editar</div>
-                    </div>
-                    <br>
-                    <div *ngFor="let seguimiento of seguimientos" class="row line-list-users">
-                        <div class="col-2">{{seguimiento.nombre_cliente}}</div>
-                        <div class="col-2">{{seguimiento.correo_cliente}}</div>
-                        <div class="col-2">Carlos</div>
-                        <div class="col-2 actived-user">{{seguimiento.nombre_seguimiento}}</div>
-                        <div class="col-2">{{seguimiento.referencia_equipo}}</div>
-                        <div class="col-2"><button type="button"
-                                (click)="openModal(contenido, seguimiento.cod_seguimiento)"><span
-                                    class="material-icons edit-note">edit_note</span></button></div>
-                    </div>
-                    <div class="pt-5 text-center">
-                        <button type="button" class="btn btn-principal">
-                            <h2 class="text-revert m-0">Volver al inicio</h2>
-                        </button>
-                    </div>
-                </div>
+  <h1 class="title-welcome fw-bold">Seguimiento</h1>
+  <br />
+  <div class="col-12">
+    <p class="pb-4">
+      Seguimiento de los pedidos por fecha de ingreso y producto.
+    </p>
+    <div *ngIf="!refresh" class="card list-users-card d-none d-lg-block d-md-block">
+      <div class="card-header container-fluid">
+        <div class="row">
+          <div class="col-2"><b>Cliente</b></div>
+          <div class="col-2"><b>Correo</b></div>
+          <div class="col-2"><b>Asignado a</b></div>
+          <div class="col-2"><b>Estado</b></div>
+          <div class="col-2"><b>Equipo</b></div>
+          <div *ngIf="userRolLS == 1 || userRolLS == 2" class="col-2"><b>Editar</b></div>
+          <div *ngIf="userRolLS != 1 && userRolLS != 2" class="col-2"><b>Acciones</b></div>
+        </div>
+      </div>
+      <div class="card-body container-fluid">
+        <br />
+        <div *ngFor="let seguimiento of seguimientos" class="row vertical-center line-list-users">
+          <div class="text-table col-2">{{ seguimiento.nombre_cliente }}</div>
+          <div class="text-table col-2">
+            {{ seguimiento.correo_cliente.toLowerCase() }}
+          </div>
+          <div class="text-table col-2">Carlos</div>
+          <div class="text-table col-2 actived-user">
+            {{ seguimiento.nombre_seguimiento }}
+          </div>
+          <div class="text-table col-2">
+            {{ seguimiento.referencia_equipo }}
+          </div>
+          <div *ngIf="!refreshBut" class="row text-table col-2">
+            <div *ngIf="userRolLS != 1 && userRolLS != 2" class="col-2 vertical-center text-table">
+              <button pButton pRipple type="button" icon="pi pi-forward"
+                class="p-button-rounded p-button-success p-button-text" (click)="toSend(seguimiento)"></button>
             </div>
+            <div
+              *ngIf="userRolLS == 1 || userRolLS == 2 || (userRolLS == 4 && seguimiento.nombre_seguimiento != 'REPARANDO')"
+              style="text-align: center" class="vertical-center text-table col-2">
+              <button pButton pRipple type="button" icon="pi pi-pencil"
+                class="p-button-rounded p-button-secondary p-button-text"
+                (click)="openModal(contenido, seguimiento.cod_seguimiento)"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center card-footer">
+        <button type="button" class="btn btn-principal">
+          <h2 class="text-revert m-0" [routerLink]="[backWelcome]">Volver al inicio</h2>
+        </button>
+      </div>
     </div>
+  </div>
 </div>

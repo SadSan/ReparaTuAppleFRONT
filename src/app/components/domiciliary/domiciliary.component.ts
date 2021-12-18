@@ -1,6 +1,7 @@
 import { SeguimientosService } from './../../services/seguimiento.service';
 import { Component, OnInit } from '@angular/core';
 import { NgbDropdownToggle } from '@ng-bootstrap/ng-bootstrap';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-domiciliary',
@@ -9,24 +10,9 @@ import { NgbDropdownToggle } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DomiciliaryComponent implements OnInit {
 
-  constructor(private seguimientosService: SeguimientosService) { }
-
-  public seguimientos: any[] = [];
+  constructor() { }
 
   ngOnInit(): void {
-    this.getSeguimientos();
-  }
-
-  public async getSeguimientos(): Promise<any> {
-    this.seguimientosService.getSeguimientos().subscribe((data) => {
-      data.forEach((element: any) => {
-        console.log(element);
-        if (element.nombre_seguimiento == "RECOGIDA") {
-          this.seguimientos.push(element)
-        }
-        
-      });
-    });
   }
 
 }

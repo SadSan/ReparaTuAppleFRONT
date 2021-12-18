@@ -1,43 +1,12 @@
-<router-outlet></router-outlet>
-
-<div class="row">
+<div style="margin-bottom: 150px;" class="row">
     <div class="col-12">
         <h1 class="title-welcome fw-bold">¡Bienvenido!</h1><br>
-        <p>Hola! <b>Felipe Bernal</b> Mira los pedidos que tienes pendientes.</p>
-            <div class="card list-users-card d-none d-lg-block d-md-block">
-                <div class="card-body">
-                    <div class="row line-list-users">
-                        <div class="col-2">Cliente</div>
-                        <div class="col-2">Correo</div>
-                        <div class="col-2">Asignado a</div>
-                        <div class="col-2">Estado</div>
-                        <div class="col-2">Equipo</div>
-                    </div>
-                    <br>
-                    <div *ngFor="let seguimiento of seguimientos" class="row line-list-users">
-                        <div class="col-2">{{seguimiento.nombre_cliente}}</div>
-                        <div class="col-2">{{seguimiento.correo_cliente}}</div>
-                        <div class="col-2">Carlos</div>
-                        <div class="col-2 actived-user">{{seguimiento.nombre_seguimiento}}</div>
-                        <div class="col-2">{{seguimiento.referencia_equipo}}</div>
-                        <div class="row">
-                            <div class="col">
-                              <div ngbDropdown class="d-inline-block">
-                                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                  <button ngbDropdownItem>Action - 1</button>
-                                  <button ngbDropdownItem>Another Action</button>
-                                  <button ngbDropdownItem>Something else is here</button>
-                                </div>
-                              </div>
-                            </div>
-                    </div>
-                    <div class="pt-5 text-center">
-                        <button type="button" class="btn btn-principal">
-                            <h2 class="text-revert m-0">Volver al inicio</h2>
-                        </button>
-                    </div>
-                </div>
+        <p>Hola! <b>Roberta Gonzales</b> ¿Que quieres hacer el día de hoy? 
+        </p>
+        <div class="row pt-4 div-admin text-center">
+            <div class="col-12 col-lg-3 col-md-3 pt-3">
+                <button type="button" [routerLink]="['/follow-up']" class="btn btn-principal"><h2 class="text-revert m-0">Mis pedidos</h2></button>
             </div>
+        </div>
     </div>
 </div>

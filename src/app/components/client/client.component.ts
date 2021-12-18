@@ -28,7 +28,7 @@ export class ClientComponent implements OnInit {
     const code = this.codeForm.value;
     this.seguimientosService.getSeguimientosByCode(code).subscribe((data) => {
       if (data) {
-        this.router.navigate(['estado-mi-producto', {code: code}])
+        this.router.navigate(['state-product', {code: code}])
       } else {
         Swal.fire({
           icon: 'error',

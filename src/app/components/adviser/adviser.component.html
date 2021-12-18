@@ -1,20 +1,22 @@
-<div class="row">
+<div style="margin-bottom: 50px;" class="row">
     <div class="col-12">
         <h1 class="title-welcome fw-bold">¡Bienvenido!</h1><br>
         <p>Hola! <b>Roberta Gonzales</b> ¿Que quieres hacer el día de hoy? 
         </p>
-        <div class="row pt-4 div-admin text-center">
+        <div style="margin-left:80px;" class="pt-4 div-admin text-left">
             <div class="col-12 col-lg-3 col-md-3 pt-3">
-                <button type="button" class="btn btn-principal"><h2 class="text-revert m-0">Mis pedidos</h2></button>
+                <button type="button" [routerLink]="['/follow-up']" class="btn btn-principal"><h2 class="text-revert m-0">Mis pedidos</h2></button>
             </div>
             <div class="col-12 col-lg-3 col-md-3 pt-3">
-                <button type="button" class="btn btn-principal"><h2 class="text-revert m-0">Enviar ofertas</h2></button>
+                <button type="button" [routerLink]="['/create-user']" class="btn btn-principal"><h2 class="text-revert m-0">Enviar ofertas</h2></button>
+            </div>
+        </div>
+        <div style="margin-left:70px;" class="pt-0 row div-admin text-left">
+            <div class="col-12 col-lg-3 col-md-3 pt-3">
+                <button type="button" [routerLink]="['/create-code']" class="btn btn-principal"><h2 class="text-revert m-0">Crear código</h2></button>
             </div>
             <div class="col-12 col-lg-3 col-md-3 pt-3">
-                <button type="button" class="btn btn-principal"><h2 class="text-revert m-0">Crear código</h2></button>
-            </div>
-            <div class="col-12 col-lg-3 col-md-3 pt-3">
-                <button type="button" class="btn btn-principal"><h2 class="text-revert m-0">Editar información</h2></button>
+                <button type="button" [routerLink]="['/create-user']" class="btn btn-principal"><h2 class="text-revert m-0">Editar información</h2></button>
             </div>
         </div>
     </div>
